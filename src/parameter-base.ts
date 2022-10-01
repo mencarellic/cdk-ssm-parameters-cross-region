@@ -52,7 +52,7 @@ export abstract class ParameterBase extends Resource implements ssm.IParameter {
   public grantWrite(grantee: iam.IGrantable): iam.Grant {
     return iam.Grant.addToPrincipal({
       grantee,
-      actions: ["ssm:PutParameter"],
+      actions: ["ssm:PutParameter", "ssm:AddTagsToResource"],
       resourceArns: [this.parameterArn],
     });
   }
